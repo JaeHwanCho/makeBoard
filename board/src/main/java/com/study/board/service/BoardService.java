@@ -55,4 +55,9 @@ public class BoardService {
 
         return;
     }
+
+    // 검색
+    public Page<Board> boardSearchList(String searchKeyword, Pageable pageable) {
+        return boardRepository.findByTitleContaining(searchKeyword, pageable);
+    }
 }
